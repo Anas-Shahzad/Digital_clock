@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Clock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-dark">
+  <div class="background-texture" aria-hidden="true"></div>
+  <main class="app-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="brand-name">Pulse Clock</span>
+      </div>
+      <div class="controls">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark or light theme">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a1 1 0 0 1 1 1v1.06a7.001 7.001 0 0 1 6.94 6.57 1 1 0 0 1-1.66.74A5 5 0 0 0 13 6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" />
+            <path d="M4.64 5.64a1 1 0 0 1 1.41 0L7.1 6.68a7.001 7.001 0 0 1 2.65-.61 1 1 0 0 1 1 1v8a1 1 0 0 1-1 1 5 5 0 0 0-3.54 1.46 1 1 0 0 1-1.41-1.42A7 7 0 0 1 9 15.66V9.24a5 5 0 0 0-1.9.73 1 1 0 0 1-1.42-1.42 7 7 0 0 1-1.04-1.91 1 1 0 0 1 0-.99Z" />
+          </svg>
+        </button>
+        <button class="icon-btn" id="fullscreenToggle" aria-label="Toggle fullscreen mode">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 4h6v2H6v4H4V4Zm10 0h6v6h-2V6h-4V4ZM6 14v4h4v2H4v-6h2Zm14 0v6h-6v-2h4v-4h2Z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="clock-card" aria-live="polite">
+      <div class="clock-body">
+        <div class="time-display" role="timer">
+          <span id="hours" class="time-part">00</span>
+          <span class="colon blink">:</span>
+          <span id="minutes" class="time-part">00</span>
+          <span class="colon blink">:</span>
+          <span id="seconds" class="time-part">00</span>
+          <span id="ampm" class="ampm" aria-hidden="true">AM</span>
+        </div>
+        <div id="date" class="date-display" aria-label="Current date">Monday, Jan 01 2026</div>
+      </div>
+
+      <div class="control-panel" aria-label="Clock controls">
+        <label class="switch" aria-label="Toggle 24-hour format">
+          <input type="checkbox" id="formatToggle" />
+          <span class="slider">
+            <span class="label-12">12h</span>
+            <span class="label-24">24h</span>
+          </span>
+        </label>
+
+        <label class="switch" aria-label="Toggle light mode">
+          <input type="checkbox" id="modeToggle" />
+          <span class="slider">
+            <span class="label-12">Dark</span>
+            <span class="label-24">Light</span>
+          </span>
+        </label>
+
+        <label class="select-wrapper">
+          <span class="label">Timezone</span>
+          <select id="timezoneSelect" aria-label="Choose timezone">
+            <option value="local">Local</option>
+            <option value="UTC">UTC</option>
+            <option value="America/New_York">New York</option>
+            <option value="Europe/London">London</option>
+            <option value="Asia/Tokyo">Tokyo</option>
+            <option value="Australia/Sydney">Sydney</option>
+          </select>
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
