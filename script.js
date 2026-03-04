@@ -9,7 +9,7 @@
   const timezoneSelect = document.getElementById("timezoneSelect");
   const themeToggleBtn = document.getElementById("themeToggle");
   const fullscreenToggleBtn = document.getElementById("fullscreenToggle");
-
+  
   let is24Hour = JSON.parse(localStorage.getItem("clock-24h") || "false");
   let theme = localStorage.getItem("clock-theme") || "dark";
   let timezone = localStorage.getItem("clock-timezone") || "local";
